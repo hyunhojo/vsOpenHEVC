@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="ks_c_5601-1987"?>
+<VisualStudioProject
+	ProjectType="Intel C++ Project"
+	Version="13.0"
+	Name="vsopenhevc"
+	ProjectGUID="{10E4530A-E284-4680-BA02-6435F7C49165}"
+	VCNestedProjectGUID="{01F53A64-29D9-4CBC-9998-5A21FC11D59D}"
+	VCNestedProjectFileName="vsopenhevc.vcproj"
+	>
+	<Configurations>
+		<Configuration
+			Name="Debug|Win32"
+			>
+			<Tool
+				Name="CppCmplrTool"
+				C99Support="true"
+				Cpp0xSupport="false"
+			/>
+		</Configuration>
+		<Configuration
+			Name="Release|Win32"
+			>
+			<Tool
+				Name="CppCmplrTool"
+				C99Support="true"
+			/>
+		</Configuration>
+	</Configurations>
+	<Files/>
+</VisualStudioProject>
