@@ -1,0 +1,282 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|Win32">
+      <Configuration>Debug</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|Win32">
+      <Configuration>Release</Configuration>
+      <Platform>Win32</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{01F53A64-29D9-4CBC-9998-5A21FC11D59D}</ProjectGuid>
+    <RootNamespace>vsopenhevc</RootNamespace>
+    <Keyword>Win32Proj</Keyword>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>Intel C++ Compiler XE 14.0</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <InterproceduralOptimization>true</InterproceduralOptimization>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <PlatformToolset>Intel C++ Compiler XE 14.0</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.props" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup>
+    <_ProjectFileVersion>12.0.21005.1</_ProjectFileVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <OutDir>$(SolutionDir)$(Configuration)\</OutDir>
+    <IntDir>$(Configuration)\</IntDir>
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">
+    <ClCompile>
+      <Optimization>Disabled</Optimization>
+      <AdditionalIncludeDirectories>./libavcodec; ./libavformat; ./libavutil; ./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <MinimalRebuild>true</MinimalRebuild>
+      <BasicRuntimeChecks>EnableFastChecks</BasicRuntimeChecks>
+      <RuntimeLibrary>MultiThreadedDebugDLL</RuntimeLibrary>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>EditAndContinue</DebugInformationFormat>
+      <C99Support>true</C99Support>
+      <Cpp0xSupport>false</Cpp0xSupport>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">
+    <ClCompile>
+      <Optimization>MaxSpeed</Optimization>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <AdditionalIncludeDirectories>./libavcodec; ./libavformat; ./libavutil; ./;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <RuntimeLibrary>MultiThreadedDLL</RuntimeLibrary>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <PrecompiledHeader />
+      <WarningLevel>Level3</WarningLevel>
+      <DebugInformationFormat>ProgramDatabase</DebugInformationFormat>
+      <C99Support>true</C99Support>
+    </ClCompile>
+    <Link>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <SubSystem>Console</SubSystem>
+      <OptimizeReferences>true</OptimizeReferences>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <TargetMachine>MachineX86</TargetMachine>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="config.h" />
+    <ClInclude Include="libavcodec\x86\cabac.h" />
+    <ClInclude Include="libavcodec\x86\constants.h" />
+    <ClInclude Include="libavcodec\x86\dsputil_x86.h" />
+    <ClInclude Include="libavcodec\x86\hevcdsp.h" />
+    <ClInclude Include="libavcodec\x86\hevcpred.h" />
+    <ClInclude Include="libavcodec\x86\mathops.h" />
+    <ClInclude Include="libavutil\x86\asm.h" />
+    <ClInclude Include="libavutil\x86\bswap.h" />
+    <ClInclude Include="libavutil\x86\cpu.h" />
+    <ClInclude Include="libavutil\x86\intreadwrite.h" />
+    <ClInclude Include="getopt.h" />
+    <ClInclude Include="inttypes.h" />
+    <ClInclude Include="openHevcWrapper.h" />
+    <ClInclude Include="stdint.h" />
+    <ClInclude Include="libavformat\avformat.h" />
+    <ClInclude Include="libavformat\avio.h" />
+    <ClInclude Include="libavformat\avio_internal.h" />
+    <ClInclude Include="libavformat\http.h" />
+    <ClInclude Include="libavformat\httpauth.h" />
+    <ClInclude Include="libavformat\id3v1.h" />
+    <ClInclude Include="libavformat\id3v2.h" />
+    <ClInclude Include="libavformat\internal.h" />
+    <ClInclude Include="libavformat\metadata.h" />
+    <ClInclude Include="libavformat\options_table.h" />
+    <ClInclude Include="libavformat\os_support.h" />
+    <ClInclude Include="libavformat\rawdec.h" />
+    <ClInclude Include="libavformat\riff.h" />
+    <ClInclude Include="libavformat\rtmp.h" />
+    <ClInclude Include="libavformat\url.h" />
+    <ClInclude Include="libavformat\urldecode.h" />
+    <ClInclude Include="libavformat\version.h" />
+    <ClInclude Include="libavcodec\avcodec.h" />
+    <ClInclude Include="libavcodec\bytestream.h" />
+    <ClInclude Include="libavcodec\cabac.h" />
+    <ClInclude Include="libavcodec\cabac_functions.h" />
+    <ClInclude Include="libavcodec\dsputil.h" />
+    <ClInclude Include="libavcodec\get_bits.h" />
+    <ClInclude Include="libavcodec\golomb.h" />
+    <ClInclude Include="libavcodec\hevc.h" />
+    <ClInclude Include="libavcodec\hevcdata.h" />
+    <ClInclude Include="libavcodec\hevcdsp.h" />
+    <ClInclude Include="libavcodec\hevcpred.h" />
+    <ClInclude Include="libavcodec\imgconvert.h" />
+    <ClInclude Include="libavcodec\internal.h" />
+    <ClInclude Include="libavcodec\mathops.h" />
+    <ClInclude Include="libavcodec\mpegvideo.h" />
+    <ClInclude Include="libavcodec\old_pix_fmts.h" />
+    <ClInclude Include="libavcodec\options_table.h" />
+    <ClInclude Include="libavcodec\parser.h" />
+    <ClInclude Include="libavcodec\put_bits.h" />
+    <ClInclude Include="libavcodec\ratecontrol.h" />
+    <ClInclude Include="libavcodec\rl.h" />
+    <ClInclude Include="libavcodec\rnd_avg.h" />
+    <ClInclude Include="libavcodec\simple_idct.h" />
+    <ClInclude Include="libavcodec\thread.h" />
+    <ClInclude Include="libavcodec\version.h" />
+    <ClInclude Include="libavcodec\videodsp.h" />
+    <ClInclude Include="libavcodec\w32pthreads.h" />
+    <ClInclude Include="libavutil\atomic.h" />
+    <ClInclude Include="libavutil\atomic_gcc.h" />
+    <ClInclude Include="libavutil\atomic_win32.h" />
+    <ClInclude Include="libavutil\attributes.h" />
+    <ClInclude Include="libavutil\audioconvert.h" />
+    <ClInclude Include="libavutil\avassert.h" />
+    <ClInclude Include="libavutil\avconfig.h" />
+    <ClInclude Include="libavutil\avstring.h" />
+    <ClInclude Include="libavutil\avutil.h" />
+    <ClInclude Include="libavutil\base64.h" />
+    <ClInclude Include="libavutil\bswap.h" />
+    <ClInclude Include="libavutil\buffer.h" />
+    <ClInclude Include="libavutil\buffer_internal.h" />
+    <ClInclude Include="libavutil\channel_layout.h" />
+    <ClInclude Include="libavutil\colorspace.h" />
+    <ClInclude Include="libavutil\common.h" />
+    <ClInclude Include="libavutil\cpu.h" />
+    <ClInclude Include="libavutil\crc.h" />
+    <ClInclude Include="libavutil\dict.h" />
+    <ClInclude Include="libavutil\error.h" />
+    <ClInclude Include="libavutil\eval.h" />
+    <ClInclude Include="libavutil\fifo.h" />
+    <ClInclude Include="libavutil\frame.h" />
+    <ClInclude Include="libavutil\imgutils.h" />
+    <ClInclude Include="libavutil\internal.h" />
+    <ClInclude Include="libavutil\intfloat.h" />
+    <ClInclude Include="libavutil\intmath.h" />
+    <ClInclude Include="libavutil\intreadwrite.h" />
+    <ClInclude Include="libavutil\lfg.h" />
+    <ClInclude Include="libavutil\libm.h" />
+    <ClInclude Include="libavutil\log.h" />
+    <ClInclude Include="libavutil\mathematics.h" />
+    <ClInclude Include="libavutil\md5.h" />
+    <ClInclude Include="libavutil\mem.h" />
+    <ClInclude Include="libavutil\old_pix_fmts.h" />
+    <ClInclude Include="libavutil\opt.h" />
+    <ClInclude Include="libavutil\parseutils.h" />
+    <ClInclude Include="libavutil\pixdesc.h" />
+    <ClInclude Include="libavutil\pixfmt.h" />
+    <ClInclude Include="libavutil\random_seed.h" />
+    <ClInclude Include="libavutil\rational.h" />
+    <ClInclude Include="libavutil\samplefmt.h" />
+    <ClInclude Include="libavutil\time.h" />
+    <ClInclude Include="libavutil\timer.h" />
+    <ClInclude Include="libavutil\version.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="libavformat\file.c" />
+    <ClCompile Include="getopt.c" />
+    <ClCompile Include="main.c" />
+    <ClCompile Include="openHevcWrapper.c" />
+    <ClCompile Include="libavformat\allformats.c" />
+    <ClCompile Include="libavformat\avformat_options.c" />
+    <ClCompile Include="libavformat\avformat_utils.c" />
+    <ClCompile Include="libavformat\avio.c" />
+    <ClCompile Include="libavformat\aviobuf.c" />
+    <ClCompile Include="libavformat\concat.c" />
+    <ClCompile Include="libavformat\cutils.c" />
+    <ClCompile Include="libavformat\format.c" />
+    <ClCompile Include="libavformat\gopher.c" />
+    <ClCompile Include="libavformat\hevcdec.c" />
+    <ClCompile Include="libavformat\metadata.c" />
+    <ClCompile Include="libavformat\os_support.c" />
+    <ClCompile Include="libavformat\rawdec.c" />
+    <ClCompile Include="libavformat\url.c" />
+    <ClCompile Include="libavformat\urldecode.c" />
+    <ClCompile Include="libavcodec\allcodecs.c" />
+    <ClCompile Include="libavcodec\avcodec_options.c" />
+    <ClCompile Include="libavcodec\avcodec_utils.c" />
+    <ClCompile Include="libavcodec\avpacket.c" />
+    <ClCompile Include="libavcodec\avpicture.c" />
+    <ClCompile Include="libavcodec\bit_depth_template.c" />
+    <ClCompile Include="libavcodec\cabac.c" />
+    <ClCompile Include="libavcodec\dsputil.c" />
+    <ClCompile Include="libavcodec\golomb.c" />
+    <ClCompile Include="libavcodec\hevc.c" />
+    <ClCompile Include="libavcodec\hevc_cabac.c" />
+    <ClCompile Include="libavcodec\hevc_filter.c" />
+    <ClCompile Include="libavcodec\hevc_mvs.c" />
+    <ClCompile Include="libavcodec\hevc_parser.c" />
+    <ClCompile Include="libavcodec\hevc_ps.c" />
+    <ClCompile Include="libavcodec\hevc_refs.c" />
+    <ClCompile Include="libavcodec\hevc_sei.c" />
+    <ClCompile Include="libavcodec\hevcdsp.c" />
+    <ClCompile Include="libavcodec\hevcpred.c" />
+    <ClCompile Include="libavcodec\hevcpred_template.c" />
+    <ClCompile Include="libavcodec\imgconvert.c" />
+    <ClCompile Include="libavcodec\parser.c" />
+    <ClCompile Include="libavcodec\pthread.c" />
+    <ClCompile Include="libavcodec\simple_idct.c" />
+    <ClCompile Include="libavcodec\videodsp.c" />
+    <ClCompile Include="libavcodec\videodsp_template.c" />
+    <ClCompile Include="libavcodec\x86\hevc_dequant_sse4.c" />
+    <ClCompile Include="libavcodec\x86\hevc_idct_sse4.c" />
+    <ClCompile Include="libavcodec\x86\hevc_intra_pred_sse.c" />
+    <ClCompile Include="libavcodec\x86\hevc_mc_sse.c" />
+    <ClCompile Include="libavcodec\x86\hevc_sao_sse.c" />
+    <ClCompile Include="libavcodec\x86\hevcdsp_init.c" />
+    <ClCompile Include="libavcodec\x86\hevcpred_init.c" />
+    <ClCompile Include="libavutil\atomic.c" />
+    <ClCompile Include="libavutil\audioconvert.c" />
+    <ClCompile Include="libavutil\avstring.c" />
+    <ClCompile Include="libavutil\base64.c" />
+    <ClCompile Include="libavutil\buffer.c" />
+    <ClCompile Include="libavutil\cpu.c" />
+    <ClCompile Include="libavutil\crc.c" />
+    <ClCompile Include="libavutil\dict.c" />
+    <ClCompile Include="libavutil\eval.c" />
+    <ClCompile Include="libavutil\frame.c" />
+    <ClCompile Include="libavutil\imgutils.c" />
+    <ClCompile Include="libavutil\log.c" />
+    <ClCompile Include="libavutil\mathematics.c" />
+    <ClCompile Include="libavutil\md5.c" />
+    <ClCompile Include="libavutil\mem.c" />
+    <ClCompile Include="libavutil\opt.c" />
+    <ClCompile Include="libavutil\parseutils.c" />
+    <ClCompile Include="libavutil\pixdesc.c" />
+    <ClCompile Include="libavutil\rational.c" />
+    <ClCompile Include="libavutil\samplefmt.c" />
+    <ClCompile Include="libavutil\time.c" />
+    <ClCompile Include="libavutil\x86\cpu.c" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+    <Import Project="$(VCTargetsPath)\BuildCustomizations\masm.targets" />
+  </ImportGroup>
+</Project>

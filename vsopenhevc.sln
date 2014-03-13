@@ -1,7 +1,9 @@
 ﻿
-Microsoft Visual Studio Solution File, Format Version 10.00
-# Visual Studio 2008
-Project("{EAF909A5-FA59-4C3D-9431-0FCC20D5BCF9}") = "vsopenhevc", "vsopenhevc.icproj", "{10E4530A-E284-4680-BA02-6435F7C49165}"
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio 2013
+VisualStudioVersion = 12.0.21005.1
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "vsopenhevc", "vsopenhevc.vcxproj", "{01F53A64-29D9-4CBC-9998-5A21FC11D59D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -9,14 +11,10 @@ Global
 		Release|Win32 = Release|Win32
 	EndGlobalSection
 	GlobalSection(ProjectConfigurationPlatforms) = postSolution
-		{10E4530A-E284-4680-BA02-6435F7C49165}.Debug|Win32.ActiveCfg = Debug|Win32
-		{10E4530A-E284-4680-BA02-6435F7C49165}.Debug|Win32.Build.0 = Debug|Win32
-		{10E4530A-E284-4680-BA02-6435F7C49165}.Release|Win32.ActiveCfg = Release|Win32
-		{10E4530A-E284-4680-BA02-6435F7C49165}.Release|Win32.Build.0 = Release|Win32
-		{01F53A64-29D9-4CBC-9998-5A21FC11D59D}.Release|Win32.Build.0 = Release|Win32
-		{01F53A64-29D9-4CBC-9998-5A21FC11D59D}.Release|Win32.ActiveCfg = Release|Win32
-		{01F53A64-29D9-4CBC-9998-5A21FC11D59D}.Debug|Win32.Build.0 = Debug|Win32
 		{01F53A64-29D9-4CBC-9998-5A21FC11D59D}.Debug|Win32.ActiveCfg = Debug|Win32
+		{01F53A64-29D9-4CBC-9998-5A21FC11D59D}.Debug|Win32.Build.0 = Debug|Win32
+		{01F53A64-29D9-4CBC-9998-5A21FC11D59D}.Release|Win32.ActiveCfg = Release|Win32
+		{01F53A64-29D9-4CBC-9998-5A21FC11D59D}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
